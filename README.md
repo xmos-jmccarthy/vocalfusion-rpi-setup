@@ -73,6 +73,10 @@ For XVF3510 devices these actions will be done as well:
 
    ```./setup.sh xvf3610```
 
+   For Avona devices, run the installation script as follows:
+
+   ```./setup.sh avona```
+
    Wait for the script to complete the installation. This can take several minutes.
 
 5. Reboot the Raspberry Pi.

@@ -1,5 +1,9 @@
 # VocalFusion Raspberry Pi Setup Change Log
 
+## 4.3.0
+
+  * Added support for Avona.
+  *
 ## 4.2.0
 
   * Added support for xvf3600.

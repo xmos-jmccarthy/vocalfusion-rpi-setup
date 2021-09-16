@@ -1,4 +1,4 @@
-# Copyright (c) 2019-2021, XMOS Ltd, All rights reserved
+# Copyright (c) 2021, XMOS Ltd, All rights reserved
 
 import argparse
 import smbus
@@ -16,7 +16,7 @@ def reset(args):
     # Features
     level_shifter = False
 
-    if args.hw == "xvf3610":
+    if args.hw == "xvf3610" || args.hw == "avona":
         level_shifter = True
 
     bus = smbus.SMBus(1)

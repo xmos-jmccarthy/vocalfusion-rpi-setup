@@ -18,6 +18,11 @@ case $XMOS_DEVICE in
     DAC_SETUP=y
     ASOUNDRC_TEMPLATE=$RPI_SETUP_DIR/resources/asoundrc_vf_xvf3510
     ;;
+  avona)
+    I2S_MODE=slave
+    DAC_SETUP=y
+    ASOUNDRC_TEMPLATE=$RPI_SETUP_DIR/resources/asoundrc_vf_xvf3510
+    ;;
   xvf3500)
     I2S_MODE=slave
     ASOUNDRC_TEMPLATE=$RPI_SETUP_DIR/resources/asoundrc_vf_stereo
@@ -159,8 +164,8 @@ I2S_NAME=i2s_$I2S_MODE
 I2S_MODULE=$RPI_SETUP_DIR/loader/$I2S_NAME/${I2S_NAME}_loader.ko
 echo "sudo insmod $I2S_MODULE"                            >> $i2s_driver_script
 
-echo "# Run Alsa at startup so that alsamixer configures" >> $i2s_driver_script	
-echo "arecord -d 1 > /dev/null 2>&1"                      >> $i2s_driver_script	
+echo "# Run Alsa at startup so that alsamixer configures" >> $i2s_driver_script
+echo "arecord -d 1 > /dev/null 2>&1"                      >> $i2s_driver_script
 echo "aplay dummy > /dev/null 2>&1"                       >> $i2s_driver_script
 
 if [[ -n "$DAC_SETUP" ]]; then
